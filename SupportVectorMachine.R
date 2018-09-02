@@ -67,7 +67,7 @@
      best.pred   <- svm.pred[,loc.kernal]
      
      # calculate corralation
-     cor.result  <- cor(norm.test$Target, best.pred)
+     cor.result  <- round(cor(norm.test$Target, best.pred),digits=5)
      
      return(paste("Target variable had been predicted by", best.kernal, 
                   "kernal with the corralation of", cor.result))

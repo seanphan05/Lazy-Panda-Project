@@ -1,6 +1,6 @@
 # Input dataset and additional conditions:
-tar.loc.train = 17 # the location of target variable column in train data
-tar.loc.test = 17 # the location of target variable column in test data
+tar.loc.train = 7 # the location of target variable column in train data
+tar.loc.test = 7 # the location of target variable column in test data
 
 # input dataset:
 split.need=FALSE # TRUE if input data need to be splitted into train & test data
@@ -19,14 +19,16 @@ else { # data doesn't need to be splitted
                          sep = ",", row.names = NULL) # replace name as input data
   }
 }
-# import conditions:
-ord.var = TRUE # TRUE if dataset contains ordinal column(s), otherwise FALSE
-# the location of ordinal column(s) 
-ord.loc.train = c(1,3)
-ord.loc.test  = c(1,3)
-# the sorted ordinal variables in ascending order
-vec1 = c("unknown", "< 0 DM", "1 - 200 DM", "> 200 DM")
-vec2 = c("poor", "good", "very good", "critical", "perfect")
-ord.vec <- list(vec1, vec2)
-
-
+# initial conditions:
+# ordinal features:
+  ord.var = TRUE # TRUE if dataset contains ordinal column(s), otherwise FALSE
+  # the location of ordinal column(s) 
+  ord.loc.train = c(1,3)
+  ord.loc.test  = c(1,3)
+  # the sorted ordinal variables in ascending order
+  vec1 = c("unknown", "< 0 DM", "1 - 200 DM", "> 200 DM")
+  vec2 = c("poor", "good", "very good", "critical", "perfect")
+  ord.vec <- list(vec1, vec2)
+  
+# Model training type define:
+  classify = TRUE # TRUE if target variable is suitable for classification otherwise FALSE

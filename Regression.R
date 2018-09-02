@@ -1,7 +1,5 @@
 regress <- function(train.data1, test.data1)
 {
-  # Create dummy variables:
-  
   if (class(train.data1$Target)=="factor") # use Logistic Regression for classification
   {
     if (length(unique(train.data1$Target))==2) # Logistic Regression with 2 levels Target variable

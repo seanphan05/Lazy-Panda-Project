@@ -25,7 +25,8 @@ vis <- function(train.data, test.data, tar.loc.train, tar.loc.test)
       # map missing values for test data:
         vis.test <- ggplot_missing(test.data)
         num.miss.test <- sapply(test.data,function(x) sum(is.na(x)))
-  miss.vis <- list("vis.train"=vis.train, "vis.test"=vis.test, 
+        
+  miss.vis <- list("vis.train"=vis.train, "vis.test"=vis.test,
                    "num.train"=num.miss.train, "num.test"=num.miss.test)
   
   # histogram of Target variable

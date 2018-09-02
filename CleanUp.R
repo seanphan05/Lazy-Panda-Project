@@ -1,6 +1,15 @@
 # Lazy Panda function:
 cleanup <- function(train.data, test.data, tar.loc.train, tar.loc.test)
-{ ########## start the mlif function
+{ ########## start cleanup function
+  # Model training type define:
+  {
+  if (classify) {  # for classification: 
+    train.data[tar.loc.train] <- lapply(train.data[tar.loc.train], as.factor)
+    test.data[tar.loc.test]   <- lapply(test.data[tar.loc.test], as.factor) }
+  else { # for numeric prediciton:
+    train.data[tar.loc.train] <- lapply(train.data[tar.loc.train], as.numeric)
+    test.data[tar.loc.test]   <- lapply(test.data[tar.loc.test], as.numeric) }
+  }
   
   # Imputate missing values:
   imputated.data <- miss.imputate(train.data, test.data)
@@ -23,8 +32,10 @@ cleanup <- function(train.data, test.data, tar.loc.train, tar.loc.test)
     tar.loc.test1           <- which(colnames(test.data1)==target.name.test) }
     
   else { 
-    train.data1    <- train.data
-    test.data1     <- test.data } 
+    train.data1     <- train.data
+    tar.loc.train1  <- tar.loc.train
+    test.data1      <- test.data 
+    tar.loc.test1   <- tar.loc.test} 
   } # end exclude ordinal variable column(s)
   
   # Rearrange dataset:
@@ -63,5 +74,5 @@ cleanup <- function(train.data, test.data, tar.loc.train, tar.loc.test)
   raw4 <- list("train.data"=new.train, "test.data"=new.test)         # for SVM and ANN algorithms
   
   return(list("Regress"=raw1, "Tree"=raw2, "Naive.Bayes"=raw3, "SVM.&.ANN"=raw4))
-  
-} ########## end the mlif function
+
+} ########## end cleanup function
