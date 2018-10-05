@@ -118,14 +118,23 @@ The ann() function will take train and test dataset as input parameter. It will 
 
 
 Appendix:
+
 All packages need to be install and load with library() before using project:
+
 Visualization: reshape2; dplyr; ggplot2; psych
+
 Missing Values Imputation: missForest
+
 Feature Encode: onehot
+
 Regression: nnet
+
 Tree based: gmodels; C50; rpart
+
 Naïve Bayes: gmodels; e1071
+
 Support Vector Machine (SVM): gmodels; e1071
+
 Artificial Neural Network (ANN): gmodels; h2o; neuralnet
 
 
