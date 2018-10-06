@@ -30,6 +30,7 @@ We have initial conditions here just in case that your data contains ordinal fea
 Finally, you need to define suitable training type for Target variable. Logical variable classify will be TRUE if Target variable is suitable for classification (categorical data). Otherwise, classify will be FALSE and thus Target variable will be used for numerical prediction (numerical data)
 
 2. Visualization function:
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Visualization.PNG)
 
 This function will return: 
 
@@ -52,23 +53,28 @@ Build up a correlation matrix among numeric variables in training dataset.
 	Scatter plot to visualize the relationship between features
 
 3. Cleanup function:
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Cleanup.PNG)
 
 For cleanup function, it will use sub functions to imputate missing values (if dataset has any missing value), arrange column data, normalize data, and encode dataset
 
 	missing values imputation (miss.imputate() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Missing.PNG)
 
 First, this function will detect any missing value in training and testing data. If any missing value has been detected, it will convert that missing value into NA. 
 Then, the function will imputate all missing values by using missForest() with missForest package, and assign dataset into a new data.frame variable.
 
 	data rearrangement (rearrange() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Rearrange.PNG)
 
 The purpose of this function is to rearrange data into a fixed format for data modeling. Particularly, it take input training and testing data as parameters, reallocate columns based on their attribute class. The function is going to change the name of Target variable column into “Target” for convenience.
 
 	data normalization (normf() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Norm.PNG)
 
 After arranging datasets, normf() function will normalize data using min-max method. Algorithms are going to used normalized dataset include: Naïve Bayes, SVM, and ANN.
 
 	data encoding (feature.encode() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/FeatureEncode.PNG)
 
 Algorithms use encoded data include: Tree based, SVM and ANN. The feature.encode() function will consider encoding data under 2 circumstances:
 -	If dataset contains any ordinal features, arbitrary encode will be performed. Basically, the function will continue looping into each ordinal column and alternate one by one its values with corresponding representative numbers which you defined earlier in the input step. Otherwise, the function will ignore ordinal encoding and move to one hot encoding stage.
@@ -76,6 +82,7 @@ Algorithms use encoded data include: Tree based, SVM and ANN. The feature.encode
 After all, the function will return 4 lists which corresponding to 4 types of algorithm training: Regression; Tree based; Naïve Bayes; SVM and ANN
 
 4. Regression algorithm (regress() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Regression.PNG)
 
 The regress() function will take train data and test data as input parameter and consider modeling input data under 3 various cases:
 
@@ -86,6 +93,7 @@ The regress() function will take train data and test data as input parameter and
 	If input training data has numeric Target Variable, the regress() function will regress training data with Linear Regression. The final result will be returned as the correlation between predicted value from model and actual value from testing data
 
 5. Tree based algorithm (dtree() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Tree.PNG)
 
 The dtree() function will training the data base on class of Target Variable:
 
@@ -94,10 +102,12 @@ The dtree() function will training the data base on class of Target Variable:
 	If Target Variable is suitable for numerical prediction, CART regression tree will be applied. The training data will be trained using rpart(), the function then calculate the correlation between predicted and actual values. Final result will include correlation and Mean Absolute Error (MAE).
 
 6. Naïve Bayes algorithm (nb() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Naive Bayes.PNG)
 
 The nb() function will classify training dataset using naiveBayes() function from e1071 package. The function then compute and return the accuracy of modeling
 
 7. Support Vector Machine SVM algorithm (suvema() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/SVM.PNG)
 
 Similar to other algorithms, suvema() function will train the input data based on class of Target Variable:
 
@@ -106,6 +116,7 @@ Similar to other algorithms, suvema() function will train the input data based o
 	If the class of Target Variable is suitable for numerical prediction, tune.svm() will be applied. The function will train data under 4 different kernals: Linear, Polynomial, Radial, and Sigmoid. For each kernal, best performance will be recorded and MSE (Mean Squared Error) will be computed. The function then compare amongs 4 kernals’ results to select the best kernal with the smallest MSE. Finally, it will return the best kernal with its correlation.
 
 8. Artificial Neural Network ANN (ann() function):
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/ANN.PNG)
 
 The ann() function will take train and test dataset as input parameter. It will consider training Target Variable based on Target’s class:
 
