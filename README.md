@@ -102,7 +102,7 @@ The dtree() function will training the data base on class of Target Variable:
 	If Target Variable is suitable for numerical prediction, CART regression tree will be applied. The training data will be trained using rpart(), the function then calculate the correlation between predicted and actual values. Final result will include correlation and Mean Absolute Error (MAE).
 
 6. Naïve Bayes algorithm (nb() function):
-![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/NaiveBayes.PNG)
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/NB.PNG)
 
 The nb() function will classify training dataset using naiveBayes() function from e1071 package. The function then compute and return the accuracy of modeling
 
