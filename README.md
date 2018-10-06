@@ -53,12 +53,12 @@ Build up a correlation matrix among numeric variables in training dataset.
 	Scatter plot to visualize the relationship between features
 
 3. Cleanup function:
-![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Cleanup.PNG)
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Cleanup.png)
 
 For cleanup function, it will use sub functions to imputate missing values (if dataset has any missing value), arrange column data, normalize data, and encode dataset
 
 	missing values imputation (miss.imputate() function):
-![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Missing.PNG)
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Missing.png)
 
 First, this function will detect any missing value in training and testing data. If any missing value has been detected, it will convert that missing value into NA. 
 Then, the function will imputate all missing values by using missForest() with missForest package, and assign dataset into a new data.frame variable.
@@ -102,7 +102,7 @@ The dtree() function will training the data base on class of Target Variable:
 	If Target Variable is suitable for numerical prediction, CART regression tree will be applied. The training data will be trained using rpart(), the function then calculate the correlation between predicted and actual values. Final result will include correlation and Mean Absolute Error (MAE).
 
 6. Naïve Bayes algorithm (nb() function):
-![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Naive Bayes.PNG)
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/NaiveBayes.PNG)
 
 The nb() function will classify training dataset using naiveBayes() function from e1071 package. The function then compute and return the accuracy of modeling
 
