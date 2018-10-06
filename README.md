@@ -30,7 +30,7 @@ We have initial conditions here just in case that your data contains ordinal fea
 Finally, you need to define suitable training type for Target variable. Logical variable classify will be TRUE if Target variable is suitable for classification (categorical data). Otherwise, classify will be FALSE and thus Target variable will be used for numerical prediction (numerical data)
 
 2. Visualization function:
-![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Visualization.PNG)
+![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/Visualization.png)
 
 This function will return: 
 
