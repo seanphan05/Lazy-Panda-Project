@@ -77,9 +77,10 @@ After arranging datasets, normf() function will normalize data using min-max met
 ![Alt text](https://github.com/seanphan05/Lazy-Panda-Project/blob/master/images/FeatureEncode.PNG)
 
 Algorithms use encoded data include: Tree based, SVM and ANN. The feature.encode() function will consider encoding data under 2 circumstances:
-<pre>
-     If dataset contains any ordinal features, arbitrary encode will be performed. Basically, the function will continue looping into each ordinal column and alternate one by one its values with corresponding representative numbers which you defined earlier in the input step. Otherwise, the function will ignore ordinal encoding and move to one hot encoding stage.
-     In one hot encoding, all categorical features will be encoded using onehot() of onehot package. The function assign new datasets into new variables and return them into list.
+
+If dataset contains any ordinal features, arbitrary encode will be performed. Basically, the function will continue looping into each ordinal column and alternate one by one its values with corresponding representative numbers which you defined earlier in the input step. Otherwise, the function will ignore ordinal encoding and move to one hot encoding stage.
+
+In one hot encoding, all categorical features will be encoded using onehot() of onehot package. The function assign new datasets into new variables and return them into list.
 After all, the function will return 4 lists which corresponding to 4 types of algorithm training: Regression; Tree based; Naïve Bayes; SVM and ANN
 </pre>
 
